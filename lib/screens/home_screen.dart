@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_mhwdb_app/config/globals.dart';
-import 'package:flutter_mhwdb_app/screens/ailments_screen.dart';
-import 'package:flutter_mhwdb_app/utils/mhw_db_api.dart';
+import 'package:flutter_mhwdb_app/screens/ailment_list_screen.dart';
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key key, this.title}) : super(key: key);
   final String title;
 
   @override
@@ -44,7 +42,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     context,
                     MaterialPageRoute(
                         builder: (context) =>
-                            const AilmentsScreen(title: 'Ailments')));
+                            const AilmentListScreen(title: 'Ailments')));
               },
             ),
             ListTile(
