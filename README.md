@@ -1,6 +1,6 @@
 # flutter_mhwdb_app
 
-A new Flutter project.
+This is a flutter app guide for the game Monster Hunter World. It's using the https://mhw-db.com/ API to fetch the information needed to display in the application. This is a work in progress, and I'm only working on it in my free time. Anyone is more than welcome to contribute.
 
 ## Getting Started
 
