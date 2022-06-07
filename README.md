@@ -1,6 +1,6 @@
 # flutter_mhwdb_app
 
-A new Flutter project.
+This is a flutter app guide for the game Monster Hunter World. It's using the https://mhw-db.com/ API to fetch the information needed to display in the application. This is a work in progress, and I'm only working on it in my free time. Anyone is more than welcome to contribute.
 
 ## Getting Started
 
@@ -14,3 +14,16 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Progress
+
+There are two screens so far, the Home Screen and Ailments Screen.
+
+This is the Home Screen:
+<br><img src="https://user-images.githubusercontent.com/47120137/172322501-791dae2a-8566-4cc8-ab09-2f224db635f5.png" alt="Home" width="300"/>
+
+This is the Ailments Screen:
+<br><img src="https://user-images.githubusercontent.com/47120137/172322675-8494b97e-1601-444e-b31e-876961d85145.png" alt="Ailments" width="300"/>
+
+Both screens are making use of a drawer for navigation:
+<br><img src="https://user-images.githubusercontent.com/47120137/172322948-fce7027c-dee2-4985-bd7c-8570518f915e.png" alt="Drawer" width="300"/>
