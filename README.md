@@ -17,13 +17,17 @@ samples, guidance on mobile development, and a full API reference.
 
 ## Progress
 
-There are two screens so far, the Home Screen and Ailments Screen.
+There are three screens so far: the Home Screen and Ailment List Screen, and the Ailment Screen
 
 This is the Home Screen:
-<br><img src="https://user-images.githubusercontent.com/47120137/172322501-791dae2a-8566-4cc8-ab09-2f224db635f5.png" alt="Home" width="300"/>
+<br><img src="https://user-images.githubusercontent.com/47120137/172322501-791dae2a-8566-4cc8-ab09-2f224db635f5.png" alt="home" width="300"/>
 
-This is the Ailments Screen:
-<br><img src="https://user-images.githubusercontent.com/47120137/172322675-8494b97e-1601-444e-b31e-876961d85145.png" alt="Ailments" width="300"/>
+This is the Ailment List Screen:
+<br><img src="https://user-images.githubusercontent.com/47120137/172322675-8494b97e-1601-444e-b31e-876961d85145.png" alt="ailment-list" width="300"/>
 
-Both screens are making use of a drawer for navigation:
+This is the Ailment Screen:
+<br><img src="https://user-images.githubusercontent.com/47120137/172364628-b5542774-11bd-4cd1-8772-474cc53ee75c.png" alt="ailment" width="300"/>
+
+All screens are making use of a drawer for navigation:
 <br><img src="https://user-images.githubusercontent.com/47120137/172322948-fce7027c-dee2-4985-bd7c-8570518f915e.png" alt="Drawer" width="300"/>
+
