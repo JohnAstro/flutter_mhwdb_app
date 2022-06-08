@@ -15,7 +15,10 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF70647d),
-        title: Text(widget.title),
+        title: Text(
+          widget.title,
+          key: const Key('database-home'),
+        ),
       ),
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
@@ -64,6 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ),
           Text(
             'Welcome to the Monster Hunter World Database!',
+            key: Key('welcome-text'),
             style: TextStyle(
               fontSize: 20,
             ),
