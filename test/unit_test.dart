@@ -42,7 +42,7 @@ void main() {
     test("Api should return ailment with the correct action(s)", () async {
       List<Ailment> ailments = await MhwAPI.fetchAilments(client);
 
-      expect(ailments[0].rec.actions[0], "This is an action");
+      expect(ailments[0].recov.actions[0], "This is an action");
     });
 
     // Item class not yet developed for api
