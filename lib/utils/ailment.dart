@@ -4,19 +4,19 @@ import 'package:flutter/material.dart';
 class Ailment {
   final String name;
   final String desc;
-  final Recovery rec;
+  final Recovery recov;
 
   const Ailment({
     this.name,
     this.desc,
-    this.rec,
+    this.recov,
   });
 
   factory Ailment.fromJson(dynamic json) {
     return Ailment(
         name: json["name"],
         desc: json["description"],
-        rec: Recovery.fromJson(json["recovery"]));
+        recov: Recovery.fromJson(json["recovery"]));
   }
 
   // Given ailment name, display corresponding icon
