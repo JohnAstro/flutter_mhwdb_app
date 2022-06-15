@@ -21,6 +21,10 @@ jobs:
     runs-on: macOS-latest
     # Contains a sequence of tasks.
     steps:
+    # This step will update rosetta
+    - name: "Update Rosetta"
+      run: "softwareupdate --install-rosetta"
+      
     # This step lists all available simulators
     - name: "List all simulators"
       run: "xcrun xctrace list devices"
