@@ -1,13 +1,68 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_mhwdb_app/utils/ailment.dart';
 import 'package:flutter_mhwdb_app/screens/ailment_list_screen.dart';
+import 'package:flutter_mhwdb_app/utils/item.dart';
 import 'package:flutter_mhwdb_app/utils/ui_methods.dart';
 
 class AilmentScreen extends StatelessWidget {
   const AilmentScreen({Key key, this.ailment, this.title}) : super(key: key);
   final Ailment ailment;
   final String title;
+
+  _displayActions() {
+    if (ailment.recov.actions.isEmpty) {
+      return Container(
+          padding: const EdgeInsets.all(8.0), child: const Text("No Actions"));
+    } else {
+      return GridView.count(
+          shrinkWrap: true,
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 1,
+          children: <Widget>[
+            for (String action in ailment.recov.actions)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: roundedBox(),
+                  child: Text(
+                    action,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+          ]);
+    }
+  }
+
+  _displayItems() {
+    if (ailment.recov.items.isEmpty) {
+      return Container(
+          padding: const EdgeInsets.all(8.0), child: const Text("No Items"));
+    } else {
+      return GridView.count(
+          physics: const NeverScrollableScrollPhysics(),
+          shrinkWrap: true,
+          crossAxisCount: 2,
+          childAspectRatio: 3 / 1,
+          children: <Widget>[
+            for (Item item in ailment.recov.items)
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: roundedBox(),
+                  child: TextButton(
+                      onPressed: () {},
+                      style: TextButton.styleFrom(primary: Colors.black),
+                      child: Text(
+                        item.name,
+                        textAlign: TextAlign.center,
+                      )),
+                ),
+              ),
+          ]);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -112,23 +167,7 @@ class AilmentScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  Row(children: [
-                    for (String action in ailment.rec.actions)
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: FittedBox(
-                          fit: BoxFit.fitWidth,
-                          child: Container(
-                            padding: const EdgeInsets.all(8.0),
-                            decoration: roundedBox(),
-                            child: Text(
-                              action,
-                              textAlign: TextAlign.center,
-                            ),
-                          ),
-                        ),
-                      ),
-                  ]),
+                  _displayActions(),
                   const Padding(
                     padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
                     child: Text(
@@ -137,6 +176,7 @@ class AilmentScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
+                  _displayItems(),
                 ],
               ),
             ),
