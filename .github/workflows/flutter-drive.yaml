@@ -18,7 +18,7 @@ jobs:
       # matrix job fails.
       fail-fast: true
     # The type of machine to run the job on.
-    runs-on: macOS-latest
+    runs-on: macos-10.15
     # Contains a sequence of tasks.
     steps:
     # This step lists all available simulators
