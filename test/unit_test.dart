@@ -42,14 +42,18 @@ void main() {
     test("Api should return ailment with the correct action(s)", () async {
       List<Ailment> ailments = await MhwAPI.fetchAilments(client);
 
-      expect(ailments[0].rec.actions[0], "This is an action");
+      expect(ailments[0].recov.actions[0], "This is an action");
     });
 
     // Item class not yet developed for api
     test("Api should return ailment with the correct item(s)", () async {
       List<Ailment> ailments = await MhwAPI.fetchAilments(client);
 
-      expect(ailments[0].desc, "This is a test");
-    }, skip: true);
+      expect(ailments[0].recov.items[0].name, "itemTest");
+      expect(ailments[0].recov.items[0].desc, "This is an item test");
+      expect(ailments[0].recov.items[0].rarity, 1);
+      expect(ailments[0].recov.items[0].value, 10);
+      expect(ailments[0].recov.items[0].carryLimit, 10);
+    });
   });
 }
