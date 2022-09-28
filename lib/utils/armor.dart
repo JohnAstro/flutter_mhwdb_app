@@ -1,4 +1,4 @@
-import 'package:flutter_mhwdb_app/utils/armor_assets.dart';
+//import 'package:flutter_mhwdb_app/utils/armor_assets.dart';
 import 'package:flutter_mhwdb_app/utils/defense.dart';
 import 'package:flutter_mhwdb_app/utils/materials.dart';
 import 'package:flutter_mhwdb_app/utils/resistances.dart';
@@ -12,7 +12,7 @@ class Armor {
   final Resistances resistances;
   final List<Slot> slots;
   final List<SkillRank> skills;
-  final ArmorAssets armorAssets;
+  //final ArmorAssets armorAssets;
   final Materials crafting;
 
   Armor({
@@ -22,7 +22,7 @@ class Armor {
     this.resistances,
     this.slots,
     this.skills,
-    this.armorAssets,
+    //this.armorAssets,
     this.crafting,
   });
 
