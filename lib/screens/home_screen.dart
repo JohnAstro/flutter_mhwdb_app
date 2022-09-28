@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mhwdb_app/screens/ailment_list_screen.dart';
+import 'package:flutter_mhwdb_app/screens/armor_list_screen.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key key, this.title}) : super(key: key);
@@ -51,8 +52,13 @@ class _MyHomePageState extends State<MyHomePage> {
             ListTile(
               title: const Text('Armor'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ArmorListScreen(
+                              title: 'Armor',
+                            )));
               },
             ),
           ],
