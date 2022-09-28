@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mhwdb_app/utils/ailment.dart';
 import 'package:flutter_mhwdb_app/screens/ailment_list_screen.dart';
+import 'package:flutter_mhwdb_app/screens/armor_list_screen.dart';
 import 'package:flutter_mhwdb_app/utils/item.dart';
+import 'package:flutter_mhwdb_app/utils/skill.dart';
 import 'package:flutter_mhwdb_app/utils/ui_methods.dart';
 
 class AilmentScreen extends StatelessWidget {
@@ -15,6 +17,7 @@ class AilmentScreen extends StatelessWidget {
           padding: const EdgeInsets.all(8.0), child: const Text("No Actions"));
     } else {
       return GridView.count(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           crossAxisCount: 2,
           childAspectRatio: 3 / 1,
@@ -28,6 +31,7 @@ class AilmentScreen extends StatelessWidget {
                   child: Text(
                     action,
                     textAlign: TextAlign.center,
+                    style: const TextStyle(fontWeight: FontWeight.w600),
                   ),
                 ),
               ),
@@ -35,8 +39,8 @@ class AilmentScreen extends StatelessWidget {
     }
   }
 
-  _displayItems() {
-    if (ailment.recov.items.isEmpty) {
+  _displayItems(items) {
+    if (items.isEmpty) {
       return Container(
           padding: const EdgeInsets.all(8.0), child: const Text("No Items"));
     } else {
@@ -46,7 +50,7 @@ class AilmentScreen extends StatelessWidget {
           crossAxisCount: 2,
           childAspectRatio: 3 / 1,
           children: <Widget>[
-            for (Item item in ailment.recov.items)
+            for (Item item in items)
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Container(
@@ -61,6 +65,37 @@ class AilmentScreen extends StatelessWidget {
                 ),
               ),
           ]);
+    }
+  }
+
+  _displaySkills(skills) {
+    if (skills.isEmpty) {
+      return Container(
+          padding: const EdgeInsets.all(8.0), child: const Text("No Skills"));
+    } else {
+      return GridView.count(
+        physics: const NeverScrollableScrollPhysics(),
+        shrinkWrap: true,
+        crossAxisCount: 2,
+        childAspectRatio: 3 / 1,
+        children: <Widget>[
+          for (Skill skill in skills)
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                decoration: roundedBox(),
+                child: TextButton(
+                  onPressed: () {},
+                  style: TextButton.styleFrom(primary: Colors.black),
+                  child: Text(
+                    skill.name,
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              ),
+            )
+        ],
+      );
     }
   }
 
@@ -101,8 +136,13 @@ class AilmentScreen extends StatelessWidget {
             ListTile(
               title: const Text('Armor'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ArmorListScreen(
+                              title: 'Armor',
+                            )));
               },
             ),
           ],
@@ -111,6 +151,7 @@ class AilmentScreen extends StatelessWidget {
       body: Center(
           child: ListView(
         children: [
+          // Poison Box
           Padding(
               padding: const EdgeInsets.all(10.0),
               child: ailment.displayIcon(ailment.name, 150, 150)),
@@ -139,12 +180,12 @@ class AilmentScreen extends StatelessWidget {
               ),
             ),
           ),
+          // Recovery Box
           Padding(
             padding: const EdgeInsets.all(10.0),
             child: Container(
               decoration: roundedBox(),
               child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   const Padding(
@@ -176,7 +217,49 @@ class AilmentScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  _displayItems(),
+                  _displayItems(ailment.recov.items),
+                ],
+              ),
+            ),
+          ),
+          // Protection Box
+          Padding(
+            padding: const EdgeInsets.all(10.0),
+            child: Container(
+              decoration: roundedBox(),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.only(top: 6.0, bottom: 2.0),
+                    child: Text(
+                      "Protection",
+                      style: TextStyle(fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  const Divider(
+                    color: Color(0xFF70647d),
+                    thickness: 2.0,
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+                    child: Text(
+                      "Items",
+                      style: TextStyle(fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  _displayItems(ailment.protection.items),
+                  const Padding(
+                    padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+                    child: Text(
+                      "Skills",
+                      style: TextStyle(fontSize: 20),
+                      textAlign: TextAlign.center,
+                    ),
+                  ),
+                  _displaySkills(ailment.protection.skills),
                 ],
               ),
             ),
