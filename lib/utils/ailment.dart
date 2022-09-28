@@ -1,3 +1,4 @@
+import 'package:flutter_mhwdb_app/utils/protection.dart';
 import 'package:flutter_mhwdb_app/utils/recovery.dart';
 import 'package:flutter/material.dart';
 
@@ -5,18 +6,21 @@ class Ailment {
   final String name;
   final String desc;
   final Recovery recov;
+  final Protection protection;
 
   const Ailment({
     this.name,
     this.desc,
     this.recov,
+    this.protection,
   });
 
   factory Ailment.fromJson(dynamic json) {
     return Ailment(
         name: json["name"],
         desc: json["description"],
-        recov: Recovery.fromJson(json["recovery"]));
+        recov: Recovery.fromJson(json["recovery"]),
+        protection: Protection.fromJson(json["protection"]));
   }
 
   // Given ailment name, display corresponding icon
