@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_mhwdb_app/config/globals.dart';
 import 'package:flutter_mhwdb_app/screens/ailment_screen.dart';
+import 'package:flutter_mhwdb_app/screens/armor_list_screen.dart';
 import 'package:flutter_mhwdb_app/utils/mhw_db_api.dart';
 import 'package:flutter_mhwdb_app/utils/ailment.dart';
 
@@ -52,8 +53,13 @@ class _AilmentListScreenState extends State<AilmentListScreen> {
             ListTile(
               title: const Text('Armor'),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ArmorListScreen(
+                              title: 'Armor',
+                            )));
               },
             ),
           ],
