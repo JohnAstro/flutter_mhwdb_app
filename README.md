@@ -26,7 +26,7 @@ This is the Ailment List Screen:
 <br><img src="https://user-images.githubusercontent.com/47120137/172322675-8494b97e-1601-444e-b31e-876961d85145.png" alt="ailment-list" width="300"/>
 
 This is the Ailment Screen:
-<br><img src="https://user-images.githubusercontent.com/47120137/172364628-b5542774-11bd-4cd1-8772-474cc53ee75c.png" alt="ailment" width="300"/>
+<br><img src="https://user-images.githubusercontent.com/47120137/193193868-431bd991-b504-4b3b-a8b7-c5fa018fc135.png" alt="ailment" width="300"/>
 
 All screens are making use of a drawer for navigation:
 <br><img src="https://user-images.githubusercontent.com/47120137/172322948-fce7027c-dee2-4985-bd7c-8570518f915e.png" alt="Drawer" width="300"/>
