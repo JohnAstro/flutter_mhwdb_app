@@ -57,7 +57,8 @@ class AilmentScreen extends StatelessWidget {
                   decoration: roundedBox(),
                   child: TextButton(
                       onPressed: () {},
-                      style: TextButton.styleFrom(primary: Colors.black),
+                      style:
+                          TextButton.styleFrom(foregroundColor: Colors.black),
                       child: Text(
                         item.name,
                         textAlign: TextAlign.center,
@@ -86,7 +87,7 @@ class AilmentScreen extends StatelessWidget {
                 decoration: roundedBox(),
                 child: TextButton(
                   onPressed: () {},
-                  style: TextButton.styleFrom(primary: Colors.black),
+                  style: TextButton.styleFrom(foregroundColor: Colors.black),
                   child: Text(
                     skill.name,
                     textAlign: TextAlign.center,

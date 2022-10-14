@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter_mhwdb_app/utils/item.dart';
 import 'package:flutter_mhwdb_app/utils/skill.dart';
 

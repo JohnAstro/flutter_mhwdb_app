@@ -133,8 +133,8 @@ class ArmorScreen extends StatelessWidget {
               decoration: roundedBox(),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Padding(
+                children: const [
+                  Padding(
                     padding: EdgeInsets.only(top: 6.0, bottom: 2.0),
                     child: Text(
                       "Protection",
@@ -142,11 +142,11 @@ class ArmorScreen extends StatelessWidget {
                       textAlign: TextAlign.center,
                     ),
                   ),
-                  const Divider(
+                  Divider(
                     color: Color(0xFF70647d),
                     thickness: 2.0,
                   ),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
                     child: Text(
                       "Items",
@@ -155,7 +155,7 @@ class ArmorScreen extends StatelessWidget {
                     ),
                   ),
                   // _displayItems(ailment.protection.items),
-                  const Padding(
+                  Padding(
                     padding: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
                     child: Text(
                       "Skills",
